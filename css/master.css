@@ -1,0 +1,123 @@
+/*
+main editor
+*/
+.editor {
+	padding: 20px;
+	min-height: 200px;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+.editor img {
+	max-width: 90%;
+}
+
+.editor:focus {
+	background-color: #e6e3e3;
+}
+
+/*
+tools buttons and background
+*/
+.toolbar {
+	background-color: teal;
+	padding: 10px;
+}
+.tools-group {
+	margin: 0 10px;
+}
+.tool-item {
+	outline: none;
+	border: none;
+	background: none;
+	color: white;
+	padding: 0 5px;
+	cursor: pointer;
+	height: 40px;
+}
+
+.tool-item:hover {
+	color: turquoise;
+}
+.tool-select {
+	width: 100px;
+}
+/*
+tool tips to button info
+*/
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+
+	background-color: rgb(34, 46, 48);
+	color: turquoise;
+	text-align: center;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 50%;
+	-ms-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	padding: 10px 15px;
+}
+
+.tooltiptext {
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+/*
+button get element buttons
+*/
+.get-container {
+	text-align: center;
+}
+
+.get-button {
+	background: teal;
+	color: white;
+	height: 50px;
+	width: 100px;
+	border: none;
+	outline: none;
+	margin: 10px;
+	padding: 10px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in;
+}
+
+.get-button:hover {
+	background-color: rgb(5, 92, 92);
+}
+
+/*
+page design and demo
+*/
+@media screen {
+	.center {
+		position: absolute;
+		width: 70%;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+@media print {
+	/* All your print styles go here */
+	.toolbar {
+		display: none;
+	}
+}

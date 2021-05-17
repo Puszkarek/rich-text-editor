@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Text Editor</title>
+	<link rel="stylesheet" href="./css/master.css" />
+	<script src="https://kit.fontawesome.com/cdf2e12bf7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="center">
+		<div id="editorContainer">
+			<div id="tools" class="toolbar">
+				<span id="format_text_tools">
+					<!--text format tools-->
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-bold fa-lg" name="bold"><span
+								class="tooltiptext">Bold</span></button>
+						<button class="tool-item tooltip fa fa-italic fa-lg" name="italic"><span
+								class="tooltiptext">Italic</span></button>
+						<button class="tool-item tooltip fa fa-underline fa-lg" name="underline"><span
+								class="tooltiptext">Underline</span></button>
+						<button class="tool-item tooltip fa fa-strikethrough fa-lg" name="strikeThrough"><span
+								class="tooltiptext">Strike Through</span></button>
+					</span>
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-superscript fa-lg" name="superscript"><span
+								class="tooltiptext">SuperScript</span></button>
+						<button class="tool-item tooltip fa fa-subscript fa-lg" name="subscript"><span
+								class="tooltiptext">Subscript</span></button>
+					</span>
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-font fa-lg" name="formatBlock,div"><span
+								class="tooltiptext">Default</span></button>
+						<button class="tool-item tooltip fa fa-heading fa-lg" name="formatBlock,h1"><span
+								class="tooltiptext">Title</span></button>
+						<button class="tool-item tooltip fa fa-heading" name="formatBlock,h2"><span
+								class="tooltiptext">Subtitle</span></button>
+						<button class="tool-item tooltip fa fa-paragraph fa-lg" name="formatBlock,p"><span
+								class="tooltiptext">Paragraph</span></button>
+						<button class="tool-item tooltip fa fa-quote-right fa-lg" name="formatBlock,blockquote"><span
+								class="tooltiptext">Quote</span></button>
+					</span>
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-indent fa-lg" name="indent"><span
+								class="tooltiptext">Indent</span></button>
+						<button class="tool-item tooltip fa fa-outdent fa-lg" name="outdent"><span
+								class="tooltiptext">Outdent</span></button>
+					</span>
+					<!--list tools-->
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-list-ol fa-lg" name="insertOrderedList"><span
+								class="tooltiptext">Ordered List</span></button>
+						<button class="tool-item tooltip fa fa-list fa-lg" name="insertUnorderedList"><span
+								class="tooltiptext">Unordered List</span></button>
+					</span>
+					<!--align tools-->
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-align-left fa-lg" name="justifyLeft"><span
+								class="tooltiptext">Align Left</span></button>
+						<button class="tool-item tooltip fa fa-align-right fa-lg" name="justifyRight"><span
+								class="tooltiptext">Align Right</span></button>
+						<button class="tool-item tooltip fa fa-align-center fa-lg" name="justifyCenter"><span
+								class="tooltiptext">Align Center</span></button>
+						<!--<button class="tool-item tooltip fa fa-align-justify fa-lg" name="justifyFull"><span class="tooltiptext">Align Justify</span></button>-->
+					</span>
+					<span>
+						<button class="tool-item tooltip fa fa-remove-format fa-lg" name="removeFormat"><span
+								class="tooltiptext">Remove Formatting</span></button>
+					</span>
+				</span>
+				<!--insert tools-->
+				<span id="input_text_tools">
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-file-image fa-lg" name="image"><span
+								class="tooltiptext">Upload Image</span></button>
+					</span>
+					<span class="tools-group">
+						<button class="tool-item tooltip fa fa-link fa-lg" name="link"><span
+								class="tooltiptext">HyperLink</span></button>
+						<button class="tool-item tooltip fa fa-unlink fa-lg" name="unlink"><span
+								class="tooltiptext">Remove HyperLink</span></button>
+					</span>
+					<button class="tool-item tooltip fa fa-clipboard fa-lg" name="copyAll"><span
+							class="tooltiptext">Select All</span></button>
+				</span>
+				<!--image input-->
+			</div>
+			<div id="textEditor" class="editor" contenteditable="true"></div>
+		</div>
+		<div class="get-container">
+			<button class="get-button" onclick="window.print()">Print</button>
+		</div>
+		<div id="output" class="output"></div>
+	</div>
+	<script type="module">
+		//imports
+			import createFunctions from "./script/functions.js";
+			//const
+			let bts = format_text_tools.getElementsByClassName("tool-item");
+			//let bts = document.getElementById("format-text-tools").getElementsByClassName("tool-item");
+			let bts_a = input_text_tools.getElementsByClassName("tool-item");
+			createFunctions(bts, bts_a);
+			//keep focus on text editor if press buttons
+			tools.onmousedown = function (e) {
+				console.log("this");
+				e.preventDefault();
+			};
+		</script>
+</body>
+
+</html>
